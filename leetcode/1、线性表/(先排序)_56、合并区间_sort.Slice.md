@@ -143,6 +143,34 @@ func max(a, b int) int {
 }
 ```
 
+* 20230514  
+```go
+func insert(intervals [][]int, newInterval []int) (ans [][]int) {
+    left, right := newInterval[0], newInterval[1]
+    merged := false
+    for _, interval := range intervals {
+        if right < interval[0] {
+            if !merged {
+                ans = append(ans, []int{left, right})
+                merged = true
+            }
+            ans = append(ans, interval)
+        } else if left > interval[1] {
+            ans = append(ans, interval)
+        } else {
+            left, right = min(left, interval[0]), max(right, interval[1])
+        }
+    }
+    if !merged {
+        ans = append(ans, []int{left, right})
+    }
+    return
+}
+
+func max(a, b int) int {if a > b {return a}; return b}
+func min(a, b int) int {if a < b {return a}; return b}
+```
+
 
 # 228. 汇总区间
 https://leetcode.cn/problems/summary-ranges/
