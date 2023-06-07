@@ -41,6 +41,24 @@ func groupAnagrams(strs []string) [][]string {
     return ans
 }
 ```
+```go
+// 20230607
+func groupAnagrams(strs []string) [][]string {
+    dict := make(map[[26]int][]string)
+    for _, s := range strs {
+        letters := [26]int{}
+        for _, ch := range s {
+            letters[ch-'a']++
+        }
+        dict[letters] = append(dict[letters], s)
+    }
+    res := make([][]string, 0)
+    for _, value := range dict {
+        res = append(res, value)
+    }
+    return res 
+}
+```
 
 ## 总结
 * golang可以使用数组作为map的key
