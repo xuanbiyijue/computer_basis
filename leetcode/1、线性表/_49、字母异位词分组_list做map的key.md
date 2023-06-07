@@ -98,6 +98,22 @@ func findRepeatedDnaSequences(s string) []string {
     return res
 }
 ```
+```go
+// 20230607
+func findRepeatedDnaSequences(s string) []string {
+    res, dict := make([]string, 0), make(map[string]bool)
+    for i:=0; i<=len(s)-10; i++ {
+        cur := s[i:i+10]
+        if flag, ok := dict[cur]; ok && flag {
+            res = append(res, cur)
+            dict[cur] = false
+        } else if !ok {
+            dict[cur] = true
+        }
+    }
+    return res 
+}
+```
 
 ## 总结
 * 空map可以直接 `dict[sub]++`
