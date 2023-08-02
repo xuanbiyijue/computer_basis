@@ -237,7 +237,7 @@ map 是一个**非线程安全**的类型。那么如何使得map变成线程安
 
 
 * map 的底层实现   
-https://zhuanlan.zhihu.com/p/273666774
+[https://zhuanlan.zhihu.com/p/273666774](https://zhuanlan.zhihu.com/p/495998623)
 https://cloud.tencent.com/developer/article/1746966
 > 简答：底层使用 hash table，并用链表（拉链法）来解决冲突。每个 map 的底层结构是 hmap，是有若干个结构为 bmap 的 bucket 组成的数组。出现冲突时，不是每一个 key 都申请一个结构通过链表串起来，而是以 bmap 为最小粒度挂载，一个 bmap 可以放 8 个 kv。在哈希函数的选择上，会在程序启动时，检测 cpu 是否支持 aes，如果支持，则使用 aes hash，否则使用 memhash。
 
