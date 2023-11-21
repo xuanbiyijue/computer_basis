@@ -11,6 +11,14 @@ Redis，英文全称是Remote Dictionary Server（远程字典服务），是一
 * Set（集合）
 * zset（有序集合）
 
+# Redis 底层数据结构
+> https://zhuanlan.zhihu.com/p/412495786
+
+![img](https://pic3.zhimg.com/80/v2-66d5964ac5521233120dc98e5452cf1a_720w.webp)
+
+
+
+
 # Redis为什么这么快
 ![img](https://pic3.zhimg.com/80/v2-f762d3d75e2d730863db187fdfaffbe2_720w.webp)  
 * 基于内存存储实现
